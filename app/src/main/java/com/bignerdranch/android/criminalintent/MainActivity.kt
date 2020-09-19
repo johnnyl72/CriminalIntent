@@ -19,11 +19,8 @@ class MainActivity : AppCompatActivity(), CrimeListFragment.Callbacks {
                 .add(R.id.fragment_container, fragment)
                 .commit()
         }
-
     }
     override fun onCrimeSelected(crimeId: UUID) {
-//        Log.d(TAG, "MainActivity.onCrimeSelected: $crimeId")
-//        val fragment = CrimeFragment()
         val fragment = CrimeFragment.newInstance(crimeId)
         supportFragmentManager
             .beginTransaction()
