@@ -77,7 +77,6 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
             }
         }
         dateButton.setOnClickListener {
-//            DatePickerFragment().apply {
             DatePickerFragment.newInstance(crime.date).apply {
                 setTargetFragment(this@CrimeFragment, REQUEST_DATE)
                 show(this@CrimeFragment.requireFragmentManager(),
@@ -97,7 +96,6 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
     private fun updateUI() {
         titleField.setText(crime.title)
         dateButton.text = crime.date.toString()
-//        solvedCheckBox.isChecked = crime.isSolved
         solvedCheckBox.apply {
             isChecked = crime.isSolved
             jumpDrawablesToCurrentState()
